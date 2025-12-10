@@ -20,7 +20,7 @@ class HomeScreenViewModel(
         )
     )
 
-    val uiState = _uiState.asStateFlow()
+    val uiState get() = _uiState.asStateFlow()
 
     init {
         fetchMercados()

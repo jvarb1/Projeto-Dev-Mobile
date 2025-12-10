@@ -16,8 +16,7 @@ class MercadoRepository(
             val mercadosApi = remoteDataSource.getMercados()
             mercados = calcularTotais(produtos, mercadosApi)
 
-            localDataSource.deleteAll()
-            localDataSource.insertAll(mercados)
+            localDataSource.upsertAll(mercados)
         } catch (e: Exception){
             mercados = localDataSource.findAll()
         }
