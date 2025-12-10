@@ -1,4 +1,4 @@
-package com.example.meumercadojusto.db
+package com.example.meumercadojusto.data.db
 
 import android.content.Context
 import androidx.room.Database
@@ -11,7 +11,7 @@ import com.example.meumercadojusto.model.Mercado
     entities = [Mercado::class]
 )
 abstract class DatabaseHelper : RoomDatabase() {
-    abstract fun mercadoDao(): MercadoDao
+    abstract fun mercadoDao(): LocalMercadoDataSource
     
     companion object {
         fun getInstance(context: Context): DatabaseHelper {

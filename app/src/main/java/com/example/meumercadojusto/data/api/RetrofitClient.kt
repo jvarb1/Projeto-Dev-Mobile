@@ -1,4 +1,4 @@
-package com.example.meumercadojusto.api
+package com.example.meumercadojusto.data.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,5 +9,5 @@ object RetrofitClient {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     
-    val mercadoApi: MercadoApi = retrofit.create(MercadoApi::class.java)
+    val mercadoApi: RemoteMercadoApiDataSource = retrofit.create(RemoteMercadoApiDataSource::class.java)
 }
